@@ -30,12 +30,11 @@ public class Paquete implements Serializable{
 	private String descripcion;
 	
 	
-	@ManyToMany(cascade = CascadeType.ALL)
-	//join table va  es la tabla que va ser de relacion
-	//joincolumn va ser el nombre de la columna que referencia a paquete 
-	@JoinTable(name="paquete_tipo_habilitado", joinColumns = { @JoinColumn(name = "paquete_id") },
-    inverseJoinColumns = { @JoinColumn(name = "tipo_habilitado_id") })
-	private Iterable<TipoHabilitado> tiposHabilitado;
+	@ManyToMany(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinTable(name = "paquete_tipo_habilitado",
+	        joinColumns = @JoinColumn(name = "paquete_id"),
+	        inverseJoinColumns = @JoinColumn(name = "tipo_habilitado_id"))
+	private Set<TipoHabilitado> tipoHabilitado;
 	
 	public Long getId() {
 		return id;
@@ -53,18 +52,14 @@ public class Paquete implements Serializable{
 		this.descripcion = descripcion;
 	}
 
-	public Iterable<TipoHabilitado> getTiposHabilitado() {
-		return tiposHabilitado;
+	public Set<TipoHabilitado> getTipoHabilitado() {
+		return tipoHabilitado;
 	}
 
-	public void setTiposHabilitado(Iterable<TipoHabilitado> tiposHabilitado) {
-		this.tiposHabilitado = tiposHabilitado;
+	public void setTipoHabilitado(Set<TipoHabilitado> tipoHabilitado) {
+		this.tipoHabilitado = tipoHabilitado;
 	}
 
-	
-	
-	
-	
 	
 
 }
