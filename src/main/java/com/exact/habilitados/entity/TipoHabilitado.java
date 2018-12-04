@@ -27,7 +27,7 @@ public class TipoHabilitado implements Serializable{
 	private Long id;
 	
 	private String descripcion;
-	
+
 	public Long getId() {
 		return id;
 	}

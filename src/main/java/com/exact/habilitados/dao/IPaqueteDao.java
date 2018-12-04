@@ -9,6 +9,5 @@ import com.exact.habilitados.entity.Paquete;
 @Repository
 public interface IPaqueteDao extends CrudRepository<Paquete, Long>{
 
-		
 	
 }
