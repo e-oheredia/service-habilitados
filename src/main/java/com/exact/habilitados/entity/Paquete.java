@@ -34,7 +34,7 @@ public class Paquete implements Serializable{
 	@JoinTable(name = "paquete_tipo_habilitado",
 	        joinColumns = @JoinColumn(name = "paquete_id"),
 	        inverseJoinColumns = @JoinColumn(name = "tipo_habilitado_id"))
-	private Set<TipoHabilitado> tipoHabilitado;
+	private Set<TipoHabilitado> tiposHabilitado;
 	
 	public Long getId() {
 		return id;
@@ -52,12 +52,12 @@ public class Paquete implements Serializable{
 		this.descripcion = descripcion;
 	}
 
-	public Set<TipoHabilitado> getTipoHabilitado() {
-		return tipoHabilitado;
+	public Set<TipoHabilitado> getTiposHabilitado() {
+		return tiposHabilitado;
 	}
 
-	public void setTipoHabilitado(Set<TipoHabilitado> tipoHabilitado) {
-		this.tipoHabilitado = tipoHabilitado;
+	public void setTiposHabilitado(Set<TipoHabilitado> tipoHabilitado) {
+		this.tiposHabilitado = tipoHabilitado;
 	}
 
 	
